@@ -1,0 +1,13 @@
+# Allure
+allure-results
+
+# Idea
+.idea
+*.iml
+
+# VS Code
+.vscode
+
+# Nunit
+bin
+obj
