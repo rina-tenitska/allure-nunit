@@ -85,7 +85,7 @@ namespace allure_nunit.tests
         }
 
         private bool IsTimeToThrowException() {
-            return new Random().NextDouble() >= 0.75;
+            return new Random().NextDouble() >= 0.85;
         }
 
         private string WebDriverIsNotReachable(string text) {
