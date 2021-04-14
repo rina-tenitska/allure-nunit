@@ -1,8 +1,4 @@
-using System;
-using Allure.Commons;
 using NUnit.Allure.Attributes;
-using NUnit.Allure.Core;
-using NUnit.Allure.Steps;
 using NUnit.Framework;
 
 namespace allure_nunit.tests
@@ -18,36 +14,40 @@ namespace allure_nunit.tests
         private const string Repo = "allure2";
         private const string Title = "First Note";
         
+        [Test]
         [AllureTag("web", "critical")]
         [AllureLabel("jira", "AE-2")]
         [AllureStory("Create new issue")]
         [AllureLabel("microservice", "Billing")]
-        [Test(Description = "Creating new issue authorized user")]
         public void ShouldCreateIssue()
         {
+            name("Creating new issue authorized user");
             WebSteps.OpenPullRequestsPage(Owner, Repo);
             WebSteps.CreateIssueWithTitle(Title);
             WebSteps.ShouldSeeIssueWithTitle(Title);
         }
         
+        [Test]
         [AllureTag("web", "regress")]
         [AllureLabel("jira", "AE-1")]
         [AllureStory("Close existing issue")]
         [AllureLabel("microservice", "Repository")]
-        [Test(Description = "Adding note to advertisement")]
         public void ShouldAddLabelToIssue()
         {
+            name("Adding note to advertisement");
             WebSteps.OpenPullRequestsPage(Owner, Repo);
             WebSteps.CreateIssueWithTitle(Title);
             WebSteps.ShouldSeeIssueWithTitle(Title);
         }
+
+        [Test]
         [AllureTag("web", "regress")]
         [AllureLabel("jira", "AE-1")]
         [AllureStory("Close existing issue")]
         [AllureLabel("microservice", "Repository")]
-        [Test(Description = "Closing new issue for authorized user")]
         public void ShouldCloseIssue()
         {
+            name("Closing new issue for authorized user");
             WebSteps.OpenPullRequestsPage(Owner, Repo);
             WebSteps.CreateIssueWithTitle(Title);
             WebSteps.CloseIssueWithTitle(Title);

@@ -4,7 +4,7 @@ using NUnit.Allure.Core;
 
 namespace allure_nunit.tests
 {
-    [AllureNUnit]
+    [AllureNUnit(false)]
     [AllureParentSuite("Root Suite")]
     public class BaseTest
     {
@@ -13,6 +13,14 @@ namespace allure_nunit.tests
         {
             AllureExtensions.WrapSetUpTearDownParams(() => { AllureLifecycle.Instance.CleanupResultDirectory(); },
                 "Clear Allure Results Directory");
+        }
+
+        public void name(string value)
+        {
+            AllureLifecycle.Instance.UpdateTestCase(result =>
+            {
+                result.name = value;
+            });
         }
     }
 }

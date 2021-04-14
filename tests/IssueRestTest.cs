@@ -14,24 +14,26 @@ namespace allure_nunit.tests
         private const string Repo = "allure2";
         private const string Title = "First Note";
         
+        [Test]
         [AllureTag("api", "smoke")]
         [AllureLabel("jira", "AE-1")]
         [AllureStory("Create new issue")]
         [AllureLabel("microservice", "Billing")]
-        [Test(Description = "Create issue via api")]
         public void ShouldCreateUserNote()
         {
+            name("Create issue via api");
             RestSteps.CreateIssueWithTitle(Owner, Repo, Title);
             RestSteps.ShouldSeeIssueWithTitle(Owner, Repo, Title);
         }
         
+        [Test]
         [AllureTag("api", "regress")]
         [AllureLabel("jira", "AE-1")]
         [AllureStory("Close existing issue")]
         [AllureLabel("microservice", "Repository")]
-        [Test(Description = "Close existing issue")]
         public void ShouldDeleteUserNote()
         {
+            name("Close existing issue");
             RestSteps.CreateIssueWithTitle(Owner, Repo, Title);
             RestSteps.CloseIssueWithTitle(Owner, Repo, Title);
         }
