@@ -3,5 +3,9 @@ using NUnit.Framework;
 
 namespace allure_nunit.tests
 {
-    Assert.Equals(1, 1);
+    [Test]
+    public void TestDummy1()
+    {
+        Assert.Equals(1, 1);
+    }
 }
