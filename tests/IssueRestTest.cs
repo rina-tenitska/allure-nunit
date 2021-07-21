@@ -3,9 +3,12 @@ using NUnit.Framework;
 
 namespace allure_nunit.tests
 {
-    [Test]
-    public void TestDummy1()
+    public class TestTest1 : BaseTest
     {
-        Assert.Equals(1, 1);
+        [Test]
+        public void TestDummy1()
+        {
+            Assert.Equals(1, 1);
+        }
     }
 }
