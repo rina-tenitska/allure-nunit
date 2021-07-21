@@ -8,8 +8,6 @@ namespace allure_nunit.tests
     [AllureFeature("Issues")]
     public class IssueWebTest : BaseTest
     {
-        private WebSteps WebSteps = new();
-
         private const string Owner = "allure-framework";
         private const string Repo = "allure2";
         private const string Title = "First Note";
