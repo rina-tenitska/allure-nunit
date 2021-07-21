@@ -8,8 +8,6 @@ namespace allure_nunit.tests
     [AllureLabel("layer", "rest")]
     public class IssueRestTest : BaseTest
     {
-        private RestSteps RestSteps = new();
-
         private const string Owner = "allure-framework";
         private const string Repo = "allure2";
         private const string Title = "First Note";
